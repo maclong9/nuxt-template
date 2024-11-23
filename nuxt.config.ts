@@ -2,6 +2,7 @@ import { getColors } from 'theme-colors'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  extends: ['@nuxt/ui-pro'],
   // Nuxt Modules
   modules: [
     '@nuxt/eslint',
@@ -9,8 +10,11 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/test-utils',
     '@nuxt/image',
+    '@nuxt/content',
+    '@nuxthub/core',
+    '@nuxthq/studio',
   ],
-  // Developer Tools Configuration
+  // Developer Tools config
   devtools: {
     enabled: true,
     timeline: {
@@ -21,25 +25,27 @@ export default defineNuxtConfig({
   // ESLint Configuration
   eslint: {
     config: {
-      autoInit: false,
       stylistic: true,
     },
   },
   // TailwindCSS Configuration
   tailwindcss: {
     config: {
-      extend: {
-        aspectRatio: {
-          auto: 'auto',
-          square: '1 / 1',
-          video: '16 / 9',
+      theme: {
+        extend: {
+          aspectRatio: {
+            auto: 'auto',
+            square: '1 / 1',
+            video: '16 / 9',
+          },
+          screens: {
+            '3xl': '2559px',
+          },
+          colors: {
+            brand: getColors('#0099cc'),
+            base: getColors('#52524D'),
+          },
         },
-        screen: {
-          '3xl': '2560px',
-        },
-      },
-      colors: {
-        primary: getColors('#0099cc'),
       },
     },
   },
