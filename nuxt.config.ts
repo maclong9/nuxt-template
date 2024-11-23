@@ -1,3 +1,5 @@
+import { getColors } from 'theme-colors'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -22,4 +24,21 @@ export default defineNuxtConfig({
     },
   },
   // TailwindCSS Configuration
+  tailwindcss: {
+    config: {
+      extend: {
+        aspectRatio: {
+          auto: 'auto',
+          square: '1 / 1',
+          video: '16 / 9',
+        },
+        screen: {
+          '3xl': '2560px',
+        },
+      },
+      colors: {
+        primary: getColors('#0099cc'),
+      },
+    },
+  },
 })
