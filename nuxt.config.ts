@@ -9,9 +9,9 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/i18n',
     '@nuxt/image',
-    '@nuxt/content',
+    '@nuxt/content', // TDOO: setup content with page builder
     '@nuxthub/core',
-    '@nuxthq/studio',
+    '@nuxthq/studio', // TODO: setup studio with page builder
     '@nuxt/fonts',
     '@vueuse/nuxt',
   ],

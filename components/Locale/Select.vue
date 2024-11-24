@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { setLocale } = useI18n()
+const { setLocale, locale } = useI18n()
 
 const open = ref(false)
 </script>
@@ -16,11 +16,11 @@ const open = ref(false)
       shortcuts: ['D'],
       click: () => setLocale('de'),
     }]]"
-    :popper="{ placement: 'bottom-start' }"
+    :popper="{ placement: 'bottom-end' }"
   >
     <UButton
       color="white"
-      label="Locale"
+      :label="locale"
       trailing-icon="i-heroicons-chevron-down-20-solid"
       :ui="{ icon: { base: `transform transition duration-200 ease-in-out ${open ? 'rotate-180' : 'rotate-0'}` } }"
     />

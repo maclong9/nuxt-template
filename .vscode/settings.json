@@ -1,9 +1,11 @@
 {
   "conventionalCommits.scopes": [
-    "setup"
+    "setup",
+    "layout"
   ],
   "eslint.useFlatConfig": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
   },
+  "todo-tree.tree.scanMode": "workspace only",
 }

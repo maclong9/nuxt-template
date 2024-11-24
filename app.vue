@@ -1,27 +1,16 @@
-<script setup lang="ts">
-const { ui } = useAppConfig()
-</script>
-
 <template>
-  <LocaleCheck />
   <NuxtRouteAnnouncer />
-  <header>
-    header
-    <LocaleSelect />
-  </header>
-
-  <main
-    :class="`prose-${ui.gray} dark:prose-invert lg:prose-md xl:prose-lg`"
-  >
+  <LayoutHeader />
+  <LayoutMain>
     <NuxtPage />
-  </main>
-
-  <footer>footer</footer>
+  </LayoutMain>
+  <LayoutFooter />
 </template>
 
 <style lang="postcss">
+/* TODO: update to tailwind 4 */
 html, body {
-  @apply font-body;
+  @apply font-body max-w-[100dvw] overflow-x-hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
