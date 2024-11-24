@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { ui } = useAppConfig()
+</script>
+
 <template>
   <LocaleCheck />
   <NuxtRouteAnnouncer />
@@ -6,8 +10,9 @@
     <LocaleSelect />
   </header>
 
-  <!-- TODO: Figure out how to get prose colour from ui config -->
-  <main class="prose-neutral dark:prose-invert lg:prose-md xl:prose-lg">
+  <main
+    :class="`prose-${ui.gray} dark:prose-invert lg:prose-md xl:prose-lg`"
+  >
     <NuxtPage />
   </main>
 

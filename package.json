@@ -28,6 +28,7 @@
     "@nuxtjs/i18n": "^9.1.0",
     "@vueuse/core": "^11.3.0",
     "consola": "^3.2.3",
+    "tailwind-merge": "^2.5.4",
     "theme-colors": "^0.1.0"
   }
 }

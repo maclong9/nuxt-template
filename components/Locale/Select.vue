@@ -18,7 +18,6 @@ const open = ref(false)
     }]]"
     :popper="{ placement: 'bottom-start' }"
   >
-    <!-- TODO: See if you can flip the chevron on open -->
     <UButton
       color="white"
       label="Locale"
