@@ -40,10 +40,6 @@ const localesMatchAndSupported = (): boolean =>
   && !localStorage.getItem(STORAGE_KEY)
   && localesCodes.value.includes(preferredLocale)
 
-logger.info('preferredLocale', preferredLocale)
-logger.info('currentLocale', currentLocale.value)
-logger.info('localesCodes', localesCodes.value)
-
 // Handle banner close
 const close = (): void => {
   bannerShowing.value = false

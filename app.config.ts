@@ -8,6 +8,6 @@ export default defineAppConfig({
   ui: {
     global: true,
     primary: 'brand',
-    gray: 'base',
+    gray: 'neutral',
   },
 })

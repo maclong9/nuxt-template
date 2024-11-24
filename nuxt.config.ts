@@ -1,7 +1,5 @@
 import { getColors } from 'theme-colors'
 
-const test =[]
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
@@ -10,7 +8,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxtjs/i18n',
-    '@nuxt/test-utils',
     '@nuxt/image',
     '@nuxt/content',
     '@nuxthub/core',
@@ -32,6 +29,12 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
+  fonts: {
+    families: [
+      { name: 'Sora', provider: 'fontsource' },
+      { name: 'Inter', provider: 'fontsource' },
+    ],
+  },
   // Translations
   i18n: {
     locales: [
@@ -52,12 +55,17 @@ export default defineNuxtConfig({
             square: '1 / 1',
             video: '16 / 9',
           },
-          screens: {
-            '3xl': '2559px',
-          },
           colors: {
             brand: getColors('#0099cc'),
-            base: getColors('#52524D'),
+          },
+          fontFamily: {
+            heading: ['Sora', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          screens: {
+            'xs': '480px',
+            '3xl': '1920px',
+            '4xl': '2560px',
           },
         },
       },
