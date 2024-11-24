@@ -1,9 +1,9 @@
 <template>
   <NuxtRouteAnnouncer />
-  <LayoutHeader />
-  <LayoutMain>
-    <NuxtPage />
-  </LayoutMain>
+  <!-- <LayoutHeader /> -->
+  <!-- <LayoutMain> -->
+  <NuxtPage />
+  <!-- </LayoutMain> -->
   <LayoutFooter />
 </template>
 
