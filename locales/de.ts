@@ -1,6 +1,6 @@
 export default {
   hero: {
-    title: 'Willkommen',
+    title: 'Starte deine neue Anwendung schnell',
     description:
       'Dies ist ein minimaler Nuxt 3 Starter Template, der die neuesten besten Praktiken verwendet, um eine produktionsbereit Webanwendung zu erstellen.',
     links: {
