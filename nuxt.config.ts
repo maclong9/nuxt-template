@@ -13,6 +13,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxthub/core',
     '@nuxthq/studio',
+    '@nuxt/fonts',
+    '@vueuse/nuxt',
   ],
   // Developer Tools config
   devtools: {
@@ -26,6 +28,16 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: true,
+    },
+  },
+  // Translations
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
     },
   },
   // TailwindCSS Configuration
