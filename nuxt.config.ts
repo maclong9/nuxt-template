@@ -1,5 +1,7 @@
 import { getColors } from 'theme-colors'
 
+const test =[]
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
@@ -32,13 +34,13 @@ export default defineNuxtConfig({
   },
   // Translations
   i18n: {
-    vueI18n: './i18n.config.ts',
+    locales: [
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'de', iso: 'de-DE', name: 'Deutsch' },
+    ],
     defaultLocale: 'en',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-    },
+    lazy: true,
+    vueI18n: './i18n.config.ts',
   },
   // TailwindCSS Configuration
   tailwindcss: {

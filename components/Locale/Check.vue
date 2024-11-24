@@ -1,23 +1,48 @@
 <script setup lang="ts">
 import type { LocaleObject } from '@nuxtjs/i18n'
-import { ref, onMounted } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { ref, onMounted, computed } from 'vue'
+import { useI18n, createI18n } from 'vue-i18n'
 
-const { locale, locales } = useI18n()
-const { language } = useNavigatorLanguage()
 const switchLocalePath = useSwitchLocalePath()
+const { locale: currentLocale, locales } = useI18n()
+const preferredLocale = useBrowserLocale()?.split('-')[0] as LocaleObject['code']
+const localesCodes = computed(() => locales.value.map(locale => locale.code))
+
+// Create a separate i18n instance for preferred language messages
+const preferredI18n = createI18n({
+  legacy: false,
+  locale: preferredLocale,
+  messages: {
+    en: {
+      localeAlert: 'Heads up! It looks like you prefer {preferredLocale}. Do you want to switch to your preferred language?',
+      continue: 'Continue',
+    },
+    de: {
+      localeAlert: 'Achtung! Es sieht aus, als ob du eine andere Sprache {preferredLocale}. Willst du deine bevorzugte Sprache einstellen?',
+      continue: 'Weiter',
+    },
+  },
+})
+
+const { t } = preferredI18n.global
+
+// Find the preferred locale object from the locales array
+const preferredLocaleObject = computed(() =>
+  locales.value.find(locale => locale.code === preferredLocale),
+)
 
 const bannerShowing = ref(false)
 const STORAGE_KEY = 'locale-banner-dismissed'
-const currentLanguage: LocaleObject = {
-  code: language.value?.split('-')[0] as LocaleObject['code'] ?? 'en',
-}
 
-// Check if preferred locale matches current
+// Check if preferred locale matches current and is supported
 const localesMatchAndSupported = (): boolean =>
-  currentLanguage.code !== locale.value
+  currentLocale.value !== preferredLocale?.split('-')[0]
   && !localStorage.getItem(STORAGE_KEY)
-  && locales.value.includes(currentLanguage.code) // FIXME: string is not assignable, type mismatch on ``locales.value``
+  && localesCodes.value.includes(preferredLocale)
+
+logger.info('preferredLocale', preferredLocale)
+logger.info('currentLocale', currentLocale.value)
+logger.info('localesCodes', localesCodes.value)
 
 // Handle banner close
 const close = (): void => {
@@ -32,17 +57,21 @@ onMounted(() => {
 
 <template>
   <UAlert
-    v-if="bannerShowing"
-    variant="subtle"
-    class="max-w-screen-lg mx-auto absolute left-1/2 -translate-x-1/2"
+    v-if="bannerShowing && preferredLocaleObject"
+    :ui="{
+      wrapper: 'flex justify-around',
+      inner: 'w-full',
+      title: 'text-sm font-medium max-w-sm mr-16',
+      padding: 'py-4 px-6',
+    }"
     :actions="[{
       variant: 'solid',
       color: 'primary',
-      label: $t('confirm'),
+      label: t('confirm', { preferredLocale: preferredLocaleObject.name }),
       click: close,
-      to: switchLocalePath(currentLanguage.code),
+      to: switchLocalePath(preferredLocale),
     }]"
-    :title="$t('localeAlert')"
+    :title="t('localeAlert', { preferredLocale: preferredLocaleObject.name })"
     :close-button="{
       icon: 'i-heroicons-x-mark-20-solid',
       color: 'gray',

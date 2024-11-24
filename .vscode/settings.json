@@ -1,9 +1,9 @@
 {
-    "conventionalCommits.scopes": [
-        "setup"
-    ],
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "i18n-ally.localesPaths": [
-      "locales"
-    ]
+  "conventionalCommits.scopes": [
+    "setup"
+  ],
+  "eslint.useFlatConfig": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+  },
 }
