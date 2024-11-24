@@ -10,17 +10,10 @@ const links = useNavigationLinks()
 
     <template #right>
       <UButton
-        icon="i-simple-icons-x"
+        icons="i-simple-icons-apple"
         color="gray"
         variant="ghost"
-        to="https://x.com/nuxt_js"
-        target="_blank"
-      />
-      <UButton
-        icon="i-simple-icons-discord"
-        color="gray"
-        variant="ghost"
-        to="https://discord.com/invite/ps2h6QT"
+        to="https://apple.com/app-store"
         target="_blank"
       />
       <UButton

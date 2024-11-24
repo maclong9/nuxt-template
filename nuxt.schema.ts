@@ -38,27 +38,6 @@ export default defineNuxtSchema({
           }),
         },
       }),
-      theme: group({
-        title: 'Theme',
-        description: 'Theme settings',
-        icon: 'i-heroicons-palette',
-        fields: {
-          category: field({
-            type: 'string',
-            title: 'Category[en]',
-            description: 'The category of your web application.',
-            icon: 'i-heroicons-folder',
-            default: 'Web Development',
-          }),
-          themeColor: field({
-            type: 'string',
-            title: 'Main Color[en]',
-            description: 'The main color of your web application.',
-            icon: 'i-heroicons-palette',
-            default: '#000000',
-          }),
-        },
-      }),
     },
     de: {
       metadata: group({
@@ -96,27 +75,27 @@ export default defineNuxtSchema({
           }),
         },
       }),
-      theme: group({
-        title: 'Design',
-        description: 'Design-Einstellungen',
-        icon: 'i-heroicons-palette',
-        fields: {
-          category: field({
-            type: 'string',
-            title: 'Kategorie[de]',
-            description: 'Die Kategorie Ihrer Webanwendung.',
-            icon: 'i-heroicons-folder',
-            default: 'Webentwicklung',
-          }),
-          themeColor: field({
-            type: 'string',
-            title: 'Hauptfarbe[de]',
-            description: 'Die Hauptfarbe Ihrer Webanwendung.',
-            icon: 'i-heroicons-palette',
-            default: '#000000',
-          }),
-        },
-      }),
     },
+    theme: group({
+      title: 'Theme',
+      description: 'Theme settings',
+      icon: 'i-heroicons-palette',
+      fields: {
+        category: field({
+          type: 'string',
+          title: 'Category',
+          description: 'The category of your web application.',
+          icon: 'i-heroicons-folder',
+          default: 'Web Development',
+        }),
+        themeColor: field({
+          type: 'string',
+          title: 'Main Color',
+          description: 'The main color of your web application.',
+          icon: 'i-heroicons-palette',
+          default: '#000000',
+        }),
+      },
+    }),
   },
 })
