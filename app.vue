@@ -8,7 +8,6 @@
 </template>
 
 <style lang="postcss">
-/* TODO: update to tailwind 4 */
 html, body {
   @apply font-body max-w-[100dvw] overflow-x-hidden;
 }
