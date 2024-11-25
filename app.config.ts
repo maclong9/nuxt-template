@@ -1,4 +1,8 @@
 export default defineAppConfig({
+  ui: {
+    primary: 'brand',
+    gray: 'neutral',
+  },
   en: {
     metadata: {
       title: 'Minimal Nuxt 3 Starter',

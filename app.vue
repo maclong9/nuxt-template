@@ -4,7 +4,7 @@
   <!-- <LayoutMain> -->
   <NuxtPage />
   <!-- </LayoutMain> -->
-  <LayoutFooter />
+  <!-- <LayoutFooter /> -->
 </template>
 
 <style lang="postcss">

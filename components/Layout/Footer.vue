@@ -9,20 +9,7 @@ const links = useNavigationLinks()
     </template>
 
     <template #right>
-      <UButton
-        icons="i-simple-icons-apple"
-        color="gray"
-        variant="ghost"
-        to="https://apple.com/app-store"
-        target="_blank"
-      />
-      <UButton
-        icon="i-simple-icons-github"
-        color="gray"
-        variant="ghost"
-        to="https://github.com/nuxt/nuxt"
-        target="_blank"
-      />
+      <LayoutSocials />
     </template>
   </UFooter>
 </template>

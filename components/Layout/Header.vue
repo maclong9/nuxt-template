@@ -21,15 +21,10 @@ const links = useNavigationLinks()
         :links="links"
         :ui="{ wrapper: 'hidden sm:flex justify-end', icon: { base: 'hidden' } }"
       />
-      <UColorModeButton />
-
-      <UButton
-        to="https://github.com/maclong9/nuxt-template"
-        target="_blank"
-        icon="i-simple-icons-github"
-        color="gray"
-        variant="ghost"
-      />
+      <div class="mx-4 flex items-center">
+        <UColorModeButton />
+        <LayoutSocials />
+      </div>
       <LocaleSelect />
     </template>
 
