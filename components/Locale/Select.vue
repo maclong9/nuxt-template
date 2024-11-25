@@ -1,6 +1,5 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 const { setLocale, locale } = useI18n()
-
 const open = ref(false)
 </script>
 
@@ -19,10 +18,10 @@ const open = ref(false)
     :popper="{ placement: 'bottom-end' }"
   >
     <UButton
-      color="white"
       :label="locale"
+      :ui="{ icon: { base: `transform transition duration-200 ease-in-out ${open ? '-rotate-180' : 'rotate-0'}` } }"
+      color="white"
       trailing-icon="i-heroicons-chevron-down-20-solid"
-      :ui="{ icon: { base: `transform transition duration-200 ease-in-out ${open ? 'rotate-180' : 'rotate-0'}` } }"
     />
   </UDropdown>
 </template>

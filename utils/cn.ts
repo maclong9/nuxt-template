@@ -18,13 +18,18 @@ declare module 'vue' {
 }
 
 /**
- * Combines class names with conditional logic.
+ * Combine classes with conditional login
  *
- * @param inputs - A variable number of arguments that will be passed to
- *   `normalizeClass`. These can be strings, arrays of strings, objects with
- *   boolean values, etc.
- * @returns A single string of class names, with duplicates removed and
- *    class names merged.
+ * Example usage:
+ *
+ * ```
+ * <h1 :class="cn(
+ *    'text-5xl font-bold',
+ *    isHighlighted && 'text-neutral-700 rounded-md bg-yellow-300 px-2 py-1'
+ *  )">
+ *    Hello, world!
+ *  </h1>
+ * ```
  */
 const cn = (...inputs: Parameters<typeof normalizeClass>) => twMerge(normalizeClass(inputs))
 

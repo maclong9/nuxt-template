@@ -1,13 +1,9 @@
-<script setup lang="ts">
-const links = useNavigationLinks()
-</script>
-
 <template>
   <UHeader :ui="{ wrapper: 'mb-2' }">
     <template #logo>
       <ULink
-        to="/"
         class="flex items-center gap-2"
+        to="/"
       >
         <UIcon
           name="bxs:pyramid"
@@ -18,7 +14,7 @@ const links = useNavigationLinks()
 
     <template #right>
       <UHorizontalNavigation
-        :links="links"
+        :links="useNavigationLinks()"
         :ui="{ wrapper: 'hidden sm:flex justify-end', icon: { base: 'hidden' } }"
       />
       <div class="mx-4 flex items-center">
@@ -30,7 +26,7 @@ const links = useNavigationLinks()
 
     <template #panel>
       <UNavigationTree
-        :links="links"
+        :links="useNavigationLinks()"
         :ui="{
           links: {
             base: 'w-full p-4 rounded-md transition-colors duration-300',

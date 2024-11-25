@@ -1,8 +1,10 @@
 export default {
+  localeAlert: 'Achtung! Es sieht aus, als ob du eine andere Sprache {preferredLocale}. Willst du deine bevorzugte Sprache einstellen?',
   general: {
     actions: {
       confirm: 'Bestätigen',
       cancel: 'Abbrechen',
+      continue: 'Weiter',
     },
   },
   layout: {
@@ -16,7 +18,7 @@ export default {
     hero: {
       title: 'Starte deine neue Anwendung schnell',
       description:
-      'Dies ist ein minimaler Nuxt 3 Starter Template, der die neuesten besten Praktiken verwendet, um eine produktionsbereit Webanwendung zu erstellen.',
+      'Dies ist ein minimaler Nuxt 3 Starter Template, der die neuesten besten Praktiken verwendet, um eine reproduktionsbereit Webanwendung zu erstellen.',
       links: {
         whatsNew: 'Was ist neu in v1.0.0',
         getStarted: 'Loslegen',
@@ -26,11 +28,11 @@ export default {
     features: {
       one: {
         title: 'Farbpalette',
-        description: 'Wahlen Sie eine primaire und eine graue Farbe aus Ihrer Tailwind CSS Farbpalette.',
+        description: 'Wahlen Sie eine primate und eine graue Farbe aus Ihrer Tailwind CSS Farbpalette.',
       },
       two: {
-        title: 'Vollkostumlisierbar',
-        description: 'Verndern Sie die Stil von jeder Komponente in Ihrer App-Konfiguration oder mit ui-Prop.',
+        title: 'Vollkostümlistenbar',
+        description: 'Verändern Sie die Stil von jeder Komponente in Ihrer App-Konfiguration oder mit ui-Prop.',
       },
       three: {
         title: 'Icons',
@@ -38,19 +40,19 @@ export default {
       },
       four: {
         title: 'Tastenkurzzeichen',
-        description: 'Nuxt UI bietet eine Reihe von Vue-Composables, um einfache Tastenkurzzeichen zu handhaben.',
+        description: 'Nuxt UI bietet eine Reihe von Vue-Composable, um einfache Tastenkurzzeichen zu handhaben.',
       },
     },
     faq: {
-      title: 'Haufig gestellte Fragen',
+      title: 'Häufig gestellte Fragen',
       questions: {
         one: {
           label: 'Was ist Nuxt UI?',
-          content: 'Nuxt UI ist eine Sammlung von UI-Komponenten und Werkzeuge, die es einfach macht, Ihre naechste Webanwendung mit Nuxt 3 zu erstellen.',
+          content: 'Nuxt UI ist eine Sammlung von UI-Komponenten und Werkzeuge, die es einfach macht, Ihre nächste Webanwendung mit Nuxt 3 zu erstellen.',
         },
         two: {
           label: 'Kann ich Nuxt UI verwenden, um Open Source-Projekte zu nutzen?',
-          content: 'Ja, Sie koennen Nuxt UI verwenden, um Open Source-Projekte zu nutzen. Es ist kostenlos und offen source.',
+          content: 'Ja, Sie kennen Nuxt UI verwenden, um Open Source-Projekte zu nutzen. Es ist kostenlos und offen source.',
         },
         three: {
           label: 'Was "Unlimited minor & patch updates" beinhaltet?',

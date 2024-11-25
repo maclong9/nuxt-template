@@ -1,10 +1,6 @@
-<script setup lang="ts">
-const links = useNavigationLinks()
-</script>
-
 <template>
   <UFooter
-    :links="links"
+    :links="useNavigationLinks()"
     :ui="{ wrapper: 'pt-8 pb-4' }"
   >
     <template #left>

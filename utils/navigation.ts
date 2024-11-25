@@ -1,13 +1,6 @@
-/**
-   * A function that returns an array of navigation links. The links are
-   * translated, and have icons for the mobile navigation.
-   *
-   * @returns An array of objects, each with the following properties:
-   *   `label`: The translated label for the link.
-   *   `icon`: The icon from the Heroicons library.
-   *   `to`: The route to navigate to when the link is clicked.
-   */
-export const useNavigationLinks = () => {
+import type { NavigationLink } from '#ui-pro/types'
+
+export const useNavigationLinks = (): NavigationLink[] => {
   const { t } = useI18n()
 
   return [{

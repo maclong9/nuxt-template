@@ -1,18 +1,16 @@
 import { getColors } from 'theme-colors'
+import { defineNuxtConfig } from 'nuxt/config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
   // Nuxt Modules
   modules: [
-    '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxtjs/i18n',
     '@nuxt/image',
-    '@nuxt/content',
-    '@nuxthub/core',
     '@nuxt/fonts',
-    '@vueuse/nuxt',
+    '@nuxt/eslint',
   ],
   // Developer Tools config
   devtools: {

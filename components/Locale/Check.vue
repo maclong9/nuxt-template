@@ -1,51 +1,46 @@
-<script setup lang="ts">
+<script lang="ts" setup>
+import { createI18n } from 'vue-i18n'
 import type { LocaleObject } from '@nuxtjs/i18n'
-import { ref, onMounted, computed } from 'vue'
-import { useI18n, createI18n } from 'vue-i18n'
+import messages from '~/locales/messages'
 
-const switchLocalePath = useSwitchLocalePath()
-const { locale: currentLocale, locales } = useI18n()
-const preferredLocale = useBrowserLocale()?.split('-')[0] as LocaleObject['code']
-const localesCodes = computed(() => locales.value.map(locale => locale.code))
-
-// Create a separate i18n instance for preferred language messages
-const preferredI18n = createI18n({
-  legacy: false,
-  locale: preferredLocale,
-  messages: {
-    en: {
-      localeAlert: 'Heads up! It looks like you prefer {preferredLocale}. Do you want to switch to your preferred language?',
-      continue: 'Continue',
-    },
-    de: {
-      localeAlert: 'Achtung! Es sieht aus, als ob du eine andere Sprache {preferredLocale}. Willst du deine bevorzugte Sprache einstellen?',
-      continue: 'Weiter',
-    },
-  },
-})
-
-const { t } = preferredI18n.global
-
-// Find the preferred locale object from the locales array
-const preferredLocaleObject = computed(() =>
-  locales.value.find(locale => locale.code === preferredLocale),
-)
-
+// State definitions
 const bannerShowing = ref(false)
 const STORAGE_KEY = 'locale-banner-dismissed'
 
-// Check if preferred locale matches current and is supported
+// Locale-related functions and states
+const switchLocalePath = useSwitchLocalePath()
+const { locale, locales } = useI18n()
+const preferredLocale = useBrowserLocale()?.split('-')[0] as LocaleObject['code']
+const localesCodes = computed(() => locales.value.map(locale => locale.code))
+
+// Create a separate i18n instance for preferred locale
+const preferredI18n = createI18n({
+  legacy: false,
+  locale: preferredLocale,
+  messages,
+})
+const { t } = preferredI18n.global
+
+// Get full locale information from locale code
+const preferredLocaleObject = computed(() =>
+  locales.value.find(locale => locale.code === preferredLocale))
+
+// Ensure preferredLocale is supported
 const localesMatchAndSupported = (): boolean =>
-  currentLocale.value !== preferredLocale?.split('-')[0]
+  locale.value !== preferredLocale?.split('-')[0]
   && !localStorage.getItem(STORAGE_KEY)
   && localesCodes.value.includes(preferredLocale)
 
-// Handle banner close
-const close = (): void => {
+logger.info('matched:', localesMatchAndSupported())
+logger.info('preferred:', preferredLocale)
+
+// Event handlers
+const closeBanner = (): void => {
   bannerShowing.value = false
   localStorage.setItem(STORAGE_KEY, 'true')
 }
 
+// Lifecycle hooks
 onMounted(() => {
   bannerShowing.value = localesMatchAndSupported()
 })
@@ -54,25 +49,25 @@ onMounted(() => {
 <template>
   <UAlert
     v-if="bannerShowing && preferredLocaleObject"
+    :actions="[{
+      variant: 'solid',
+      color: 'primary',
+      label: t('confirm', { preferredLocale: preferredLocaleObject.name }),
+      click: closeBanner,
+      to: switchLocalePath(preferredLocale),
+    }]"
+    :close-button="{
+      icon: 'i-heroicons-x-mark-20-solid',
+      color: 'gray',
+      variant: 'link',
+    }"
+    :title="t('localeAlert', { preferredLocale: preferredLocaleObject.name })"
     :ui="{
       wrapper: 'flex justify-around',
       inner: 'w-full',
       title: 'text-sm font-medium max-w-sm mr-16',
       padding: 'py-4 px-6',
     }"
-    :actions="[{
-      variant: 'solid',
-      color: 'primary',
-      label: t('confirm', { preferredLocale: preferredLocaleObject.name }),
-      click: close,
-      to: switchLocalePath(preferredLocale),
-    }]"
-    :title="t('localeAlert', { preferredLocale: preferredLocaleObject.name })"
-    :close-button="{
-      icon: 'i-heroicons-x-mark-20-solid',
-      color: 'gray',
-      variant: 'link',
-    }"
-    @close="close"
+    @close="closeBanner"
   />
 </template>
