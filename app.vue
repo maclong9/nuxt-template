@@ -1,10 +1,8 @@
 <template>
   <NuxtRouteAnnouncer />
-  <!-- <LayoutHeader /> -->
-  <!-- <LayoutMain> -->
+  <LayoutHeader />
   <NuxtPage />
-  <!-- </LayoutMain> -->
-  <!-- <LayoutFooter /> -->
+  <LayoutFooter />
 </template>
 
 <style lang="postcss">

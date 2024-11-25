@@ -3,8 +3,7 @@ const { ui } = useAppConfig()
 </script>
 
 <template>
-  <!-- TODO: setup content and create a page builder -->
-  <UMain :class="`prose-${ui.gray} dark:prose-invert lg:prose-md xl:prose-lg`">
+  <UMain :class="`prose-${ui.gray} max-w-screen-xl mx-auto dark:prose-invert lg:prose-md xl:prose-lg`">
     <slot />
   </UMain>
 </template>

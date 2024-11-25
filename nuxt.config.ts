@@ -2,7 +2,7 @@ import { getColors } from 'theme-colors'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // extends: ['@nuxt/ui-pro'],
+  extends: ['@nuxt/ui-pro'],
   // Nuxt Modules
   modules: [
     '@nuxt/eslint',
@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
     '@nuxthub/core',
-    '@nuxthq/studio', // TODO: setup studio with page builder
     '@nuxt/fonts',
     '@vueuse/nuxt',
   ],
