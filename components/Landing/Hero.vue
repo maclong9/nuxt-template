@@ -1,5 +1,8 @@
 <template>
-  <section id="hero">
+  <ULandingSection
+    id="hero"
+    :ui="{ wrapper: 'py-0 md:py-0 lg:py-0' }"
+  >
     <ULandingHero
       :title="$t('landing.hero.title')"
       :description="$t('landing.hero.description')"
@@ -16,11 +19,11 @@
         size: 'lg',
         to: '/about',
       }]"
-      :ui="{ wrapper: 'py-16 sm:py-18 md:py-24' }"
+      :ui="{ wrapper: 'py-12 sm:py-14 md:py-16' }"
     >
       <template #headline>
         <UButton
-          :label="$t('hero.links.whatsNew')"
+          :label="$t('landing.hero.links.whatsNew')"
           color="gray"
           to="https://github.com/maclong9/nuxt-template/releases"
           trailing-icon="i-heroicons-arrow-right"
@@ -35,5 +38,5 @@
         >
       </template>
     </ULandingHero>
-  </section>
+  </ULandingSection>
 </template>

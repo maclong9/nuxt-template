@@ -1,4 +1,17 @@
 export default {
+  general: {
+    actions: {
+      confirm: 'Bestätigen',
+      cancel: 'Abbrechen',
+    },
+  },
+  layout: {
+    nav: {
+      about: 'Über',
+      contact: 'Kontakt',
+      blog: 'Blog',
+    },
+  },
   landing: {
     hero: {
       title: 'Starte deine neue Anwendung schnell',
@@ -28,29 +41,22 @@ export default {
         description: 'Nuxt UI bietet eine Reihe von Vue-Composables, um einfache Tastenkurzzeichen zu handhaben.',
       },
     },
-    questions: {
+    faq: {
       title: 'Haufig gestellte Fragen',
-      questionOne: {
-        title: 'Was ist Nuxt UI?',
-        answer: 'Nuxt UI ist eine Sammlung von UI-Komponenten und Werkzeuge, die es einfacher macht, Ihre naechste Webanwendung mit Nuxt 3 zu erstellen.',
-      },
-      questionTwo: {
-        title: 'Kann ich Nuxt UI verwenden, um Open Source-Projekte zu nutzen?',
-        answer: 'Ja, Sie koennen Nuxt UI verwenden, um Open Source-Projekte zu nutzen. Es ist kostenlos und offen source.',
-      },
-      questionThree: {
-        title: 'Was beinhaltet "Unlimited minor & patch updates"?',
-        answer: 'Unlimited minor and patch updates, including bug fixes and security patches.',
+      questions: {
+        one: {
+          label: 'Was ist Nuxt UI?',
+          content: 'Nuxt UI ist eine Sammlung von UI-Komponenten und Werkzeuge, die es einfach macht, Ihre naechste Webanwendung mit Nuxt 3 zu erstellen.',
+        },
+        two: {
+          label: 'Kann ich Nuxt UI verwenden, um Open Source-Projekte zu nutzen?',
+          content: 'Ja, Sie koennen Nuxt UI verwenden, um Open Source-Projekte zu nutzen. Es ist kostenlos und offen source.',
+        },
+        three: {
+          label: 'Was "Unlimited minor & patch updates" beinhaltet?',
+          content: 'Unbegrenzte kleinere und Patch-Updates, einschließlich Fehlerbehebungen und Sicherheitspatches.',
+        },
       },
     },
-  },
-  nav: {
-    about: 'Über',
-    contact: 'Kontakt',
-    blog: 'Blog',
-  },
-  actions: {
-    confirm: 'Bestätigen',
-    cancel: 'Abbrechen',
   },
 }

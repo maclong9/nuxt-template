@@ -1,7 +1,7 @@
 <template>
-  <section id="landing">
+  <ULandingSection id="landing">
     <ULandingGrid
-      :ui="{ wrapper: 'py-16 sm:py-18 md:py-24' }"
+      :ui="{ wrapper: 'py-0 sm:py-0 md:py-0' }"
     >
       <ULandingCard
         class="col-span-6 row-span-2"
@@ -28,5 +28,5 @@
         :description="$t('landing.features.four.description')"
       />
     </ULandingGrid>
-  </section>
+  </Ulandingsection>
 </template>

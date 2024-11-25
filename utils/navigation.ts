@@ -11,15 +11,15 @@ export const useNavigationLinks = () => {
   const { t } = useI18n()
 
   return [{
-    label: t('nav.about'),
+    label: t('layout.nav.about'),
     icon: 'i-heroicons-information-circle',
     to: '/about',
   }, {
-    label: t('nav.blog'),
+    label: t('layout.nav.blog'),
     icon: 'i-heroicons-newspaper',
     to: '/blog',
   }, {
-    label: t('nav.contact'),
+    label: t('layout.nav.contact'),
     icon: 'i-heroicons-at-symbol',
     to: '/contact',
   }]
