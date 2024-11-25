@@ -1,4 +1,5 @@
 <template>
+  <LocaleCheck />
   <UHeader :ui="{ wrapper: 'mb-2' }">
     <template #logo>
       <ULink

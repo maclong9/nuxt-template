@@ -31,9 +31,6 @@ const localesMatchAndSupported = (): boolean =>
   && !localStorage.getItem(STORAGE_KEY)
   && localesCodes.value.includes(preferredLocale)
 
-logger.info('matched:', localesMatchAndSupported())
-logger.info('preferred:', preferredLocale)
-
 // Event handlers
 const closeBanner = (): void => {
   bannerShowing.value = false
@@ -68,6 +65,7 @@ onMounted(() => {
       title: 'text-sm font-medium max-w-sm mr-16',
       padding: 'py-4 px-6',
     }"
+    class="bg-neutral-100 dark:bg-neutral-800"
     @close="closeBanner"
   />
 </template>
