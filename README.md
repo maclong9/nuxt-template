@@ -20,6 +20,11 @@ applications. It provides a rich ecosystem of modules and a structured approach 
 - **Custom Configuration**: Modules like ESLint and others can be configured with just a few lines in the
   `nuxt.config.ts` file.
 
+### Nuxt UI
+
+This is the UI library being used for this starter, it provides good base layouts for regularly used components across
+web applications. Thanks to it's slot structure and `:ui` attributes it is also heavily customisable. 
+
 ### TailwindCSS
 
 TailwindCSS is a utility-first CSS framework that provides low-level utility classes for building custom designs

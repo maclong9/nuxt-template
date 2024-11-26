@@ -7,7 +7,7 @@ import messages from '~/locales/messages'
 const bannerShowing = ref(false)
 const STORAGE_KEY = 'locale-banner-dismissed'
 
-// Locale-related functions and states
+// Locale-related values
 const switchLocalePath = useSwitchLocalePath()
 const { locale, locales } = useI18n()
 const preferredLocale = useBrowserLocale()?.split('-')[0] as LocaleObject['code']
@@ -48,7 +48,6 @@ onMounted(() => {
     v-if="bannerShowing && preferredLocaleObject"
     :actions="[{
       variant: 'solid',
-      color: 'primary',
       label: t('confirm', { preferredLocale: preferredLocaleObject.name }),
       click: closeBanner,
       to: switchLocalePath(preferredLocale),

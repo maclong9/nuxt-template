@@ -18,7 +18,7 @@ declare module 'vue' {
 }
 
 /**
- * Combine classes with conditional login
+ * Combine classes with conditional logic
  *
  * Example usage:
  *

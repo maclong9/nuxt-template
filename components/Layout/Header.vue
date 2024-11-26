@@ -13,6 +13,10 @@
       </ULink>
     </template>
 
+    <template #center>
+      <!-- Left Blank for Starter -->
+    </template>
+
     <template #right>
       <UHorizontalNavigation
         :links="useNavigationLinks()"
