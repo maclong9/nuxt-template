@@ -1,22 +1,6 @@
 import { twMerge } from 'tailwind-merge'
 import { normalizeClass } from 'vue'
 
-type ClassDictionary = Record<string, boolean | undefined | null>
-
-type ClassArray = ClassValue[]
-type ClassValue =
-  | ClassArray
-  | ClassDictionary
-  | string
-  | number
-  | null
-  | boolean
-  | undefined
-
-declare module 'vue' {
-  function normalizeClass(...inputs: ClassValue[]): string
-}
-
 /**
  * Combine classes with conditional logic
  *
@@ -31,6 +15,5 @@ declare module 'vue' {
  *  </h1>
  * ```
  */
-const cn = (...inputs: Parameters<typeof normalizeClass>) => twMerge(normalizeClass(inputs))
-
-export default cn
+export default (...inputs: Parameters<typeof normalizeClass>) =>
+  twMerge(normalizeClass(inputs))
