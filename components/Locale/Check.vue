@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { createI18n } from 'vue-i18n'
 import type { LocaleObject } from '@nuxtjs/i18n'
+
+import { createI18n } from 'vue-i18n'
 import messages from '~/locales/messages'
 
 // State definitions

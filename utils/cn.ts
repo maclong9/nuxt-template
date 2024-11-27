@@ -15,5 +15,5 @@ import { normalizeClass } from 'vue'
  *  </h1>
  * ```
  */
-export default (...inputs: Parameters<typeof normalizeClass>) =>
+export default (...inputs: Parameters<typeof normalizeClass>): string =>
   twMerge(normalizeClass(inputs))

@@ -1,3 +1,5 @@
+import type { DefaultLocaleMessageSchema } from 'vue-i18n'
+
 export default {
   localeAlert: 'Heads up! It looks like you prefer {preferredLocale}. Do you want to switch to your preferred language?',
   layout: {
@@ -61,4 +63,4 @@ export default {
       },
     },
   },
-}
+} satisfies DefaultLocaleMessageSchema

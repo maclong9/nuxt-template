@@ -1,6 +1,6 @@
 import type { NavigationLink } from '#ui-pro/types'
 
-export const useNavigationLinks = (): NavigationLink[] => {
+export const useNavigationLinks: () => NavigationLink[] = () => {
   const { t } = useI18n()
 
   return [{

@@ -1,8 +1,9 @@
+import type { DefaultLocaleMessageSchema } from 'vue-i18n'
+
 import de from './de'
 import en from './en'
 
-// An object containing translations for supported languages.
 export default {
   en,
   de,
-}
+} satisfies DefaultLocaleMessageSchema
